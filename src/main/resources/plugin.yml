@@ -1,0 +1,6 @@
+name: Lancha
+version: '1.0.0'
+main: com.syntask.lancha.Lancha
+api-version: '1.20'
+author: YourName
+description: Craftable speed boats with upgradable horsepower.

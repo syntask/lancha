@@ -1,0 +1,30 @@
+# Maven build output
+target/
+
+# Test server
+test/
+
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+*~
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.classpath
+.project
+.settings/
+
+# Compiled classes
+*.class
+
+# Logs
+*.log
+
+# Package files (jars in dist/ are tracked for release)
+*.war
+*.nar
+*.ear

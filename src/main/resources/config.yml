@@ -1,0 +1,13 @@
+# Lancha Configuration
+#
+# Recipes (ingredient above boat in crafting grid):
+#   Iron Ingot  -> 50hp Speed Boat
+#   Gold Ingot  -> 100hp Speed Boat
+#   Diamond     -> 150hp Speed Boat
+#
+# Speed values interpolated from HP, using 100hp as reference:
+#   max-boost: 1.4, acceleration: 0.048, deceleration: 0.032, brake-force: 0.1
+
+# Global multiplier applied to all speed values.
+# 1.0 = default, 2.0 = double speed, 0.5 = half speed.
+global-speed-multiplier: 1.0
