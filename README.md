@@ -14,7 +14,7 @@ Craftable speed boats for Paper servers. Upgrade your boat by using better mater
 
 ## Installation
 
-1. Download the jar: [https://raw.githubusercontent.com/syntask/lancha/main/dist/lancha-1.0.0.jar](https://raw.githubusercontent.com/syntask/lancha/main/dist/lancha-1.0.0.jar)
+1. Download the jar: [https://github.com/syntask/lancha/releases/download/release/lancha-1.1.0.jar](https://github.com/syntask/lancha/releases/download/release/lancha-1.1.0.jar)
 2. Place `lancha-1.0.0.jar` in your server's `plugins/` folder
 3. Restart the server (or run `/reload confirm`)
 

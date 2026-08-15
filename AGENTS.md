@@ -4,8 +4,8 @@ Instructions for AI coding agents working on the Lancha plugin.
 
 ## Quick Reference
 
-- **Build**: `mvn package` → `target/lancha-1.0.0.jar`
-- **Test server**: Paper 26.2 in `test/` (gitignored) — see [CONTRIBUTING.md](CONTRIBUTING.md) for setup
+- **Build**: `mvn package` → `target/lancha-*.jar`
+- **Test server**: Paper server in `test/` (gitignored) — see [CONTRIBUTING.md](CONTRIBUTING.md) for setup
 - **Hot reload**: `mvn package && cp target/lancha-*.jar test/plugins/` then `/reload confirm` in-server
 - **No unit tests** — all testing is manual via the local Paper server
 - **Full docs**: [README.md](README.md) (user-facing), [CONTRIBUTING.md](CONTRIBUTING.md) (dev setup)
