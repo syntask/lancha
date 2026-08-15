@@ -10,7 +10,7 @@ Craftable speed boats for Paper servers. Upgrade your boat by using better mater
 - **Smooth speed simulation**: acceleration, coast deceleration, and active braking by using the reverse control ("S" on PC).
 - **Works with all boat types**: oak, spruce, birch, jungle, acacia, dark oak, mangrove, cherry, pale oak, and bamboo rafts
 - **Configurable**: server operators can adjust a global speed multiplier
-- **No client mod required**: works entirely server-side on Paper 1.21.4+
+- **No client mod required**: works entirely server-side on Paper 26.2+
 
 ## Installation
 
@@ -56,7 +56,7 @@ cd lancha
 mvn package
 ```
 
-The compiled jar is written to `target/lancha-1.0.0.jar`.
+The compiled jar is written to `target/`.
 
 ## License
 
