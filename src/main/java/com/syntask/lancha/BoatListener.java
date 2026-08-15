@@ -8,6 +8,7 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityPlaceEvent;
 import org.bukkit.event.player.PlayerInputEvent;
+import org.bukkit.event.vehicle.VehicleDestroyEvent;
 import org.bukkit.event.vehicle.VehicleExitEvent;
 import org.bukkit.event.vehicle.VehicleMoveEvent;
 import org.bukkit.inventory.ItemStack;
@@ -61,6 +62,35 @@ public class BoatListener implements Listener {
                 SpeedBoatItem.getHpKey(), PersistentDataType.INTEGER, hp);
             boat.setCustomName(null);
         }
+    }
+
+    /**
+     * When a speed boat is destroyed, cancel the vanilla drop and instead
+     * drop the correct speed boat item with its HP tag intact.
+     * Without this, breaking a speed boat drops a plain vanilla boat.
+     */
+    @EventHandler(priority = EventPriority.HIGH)
+    public void onVehicleDestroy(VehicleDestroyEvent event) {
+        if (!(event.getVehicle() instanceof Boat boat)) return;
+
+        int hp = boat.getPersistentDataContainer()
+            .getOrDefault(SpeedBoatItem.getHpKey(), PersistentDataType.INTEGER, 0);
+        if (hp <= 0) return;  // vanilla boat, let default behaviour handle it
+
+        // Prevent vanilla destruction (which drops a plain boat item)
+        event.setCancelled(true);
+
+        // Drop the correct speed boat item with HP preserved
+        ItemStack drop = SpeedBoatItem.create(new ItemStack(boat.getBoatMaterial()), hp);
+        boat.getWorld().dropItemNaturally(boat.getLocation(), drop);
+
+        // Eject any passengers before removing the entity
+        for (org.bukkit.entity.Entity passenger : boat.getPassengers()) {
+            boat.eject();
+        }
+
+        // Remove the boat entity (no item drop since we cancelled the event)
+        boat.remove();
     }
 
     @EventHandler
